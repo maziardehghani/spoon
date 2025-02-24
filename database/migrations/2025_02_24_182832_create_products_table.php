@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->unsignedBigInteger('price');
             $table->unsignedBigInteger('category_id');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
