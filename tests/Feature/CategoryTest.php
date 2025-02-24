@@ -14,7 +14,7 @@ class CategoryTest extends TestCase
      */
     public function test_admin_can_see_products(): void
     {
-        $response = $this->getData(route('admin.products.index'));
+        $response = $this->getData(route('admin.categories.index'));
 
         $response->assertStatus(200);
     }
