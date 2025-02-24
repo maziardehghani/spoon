@@ -6,7 +6,7 @@ use App\Trait\AdminTestable;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
-class ProductTest extends TestCase
+class CategoryTest extends TestCase
 {
     use RefreshDatabase, AdminTestable;
     /**
