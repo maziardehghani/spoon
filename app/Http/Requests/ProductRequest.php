@@ -25,7 +25,7 @@ class ProductRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:255'],
-            'slug' => ['required', 'string', Rule::unique(Product::class, 'slug'), 'max:255'],
+            'slug' => ['required', 'string', Rule::unique(Product::class, 'slug')->ignore($this->route()->product->id)],
             'description' => ['nullable', 'string'],
             'price' => ['required', 'numeric', 'min:0'],
             'is_active' => ['required', 'boolean'],

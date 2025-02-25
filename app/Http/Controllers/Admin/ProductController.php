@@ -19,6 +19,17 @@ class ProductController extends Controller
         $product = Product::query()->create($request->validated());
 
         return response()->success($product, 'success');
+    }
 
+
+    public function show(Product $product)
+    {
+        return response()->success($product, 'success');
+    }
+
+    public function update(ProductRequest $request, Product $product)
+    {
+        $product->update($request->validated());
+        return response()->success($product, 'success');
     }
 }
