@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -24,5 +25,21 @@ Route::prefix('categories')->group(function () {
     Route::post('/store', [CategoryController::class, 'store'])->name('categories.store');
     Route::put('/update/{category}', [CategoryController::class, 'update'])->name('categories.update');
     Route::delete('/delete/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
+
+});
+
+/////////////////////////Files///////////////////////////
+Route::prefix('files')->group(function () {
+
+    Route::post('/store', [FileController::class, 'store'])
+        ->name('files.store');
+
+
+    Route::post('/replace', [FileController::class, 'replace'])
+        ->name('files.replace');
+
+
+    Route::delete('/delete/{media}', [FileController::class, 'delete'])
+        ->name('files.delete');
 
 });
