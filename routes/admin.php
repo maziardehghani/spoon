@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Route;
 ////////////////////Products///////////////////
 Route::prefix('products')->group(function () {
     Route::get('/', [ProductController::class, 'index'])->name('products.index');
+    Route::post('/store', [ProductController::class, 'store'])->name('products.store');
 });
 
 
