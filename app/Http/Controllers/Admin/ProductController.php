@@ -32,4 +32,11 @@ class ProductController extends Controller
         $product->update($request->validated());
         return response()->success($product, 'success');
     }
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return response()->success(null, 'success');
+    }
+
 }
