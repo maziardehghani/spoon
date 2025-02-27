@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\FileController;
 use App\Http\Controllers\Admin\ProductController;
@@ -27,6 +28,20 @@ Route::prefix('categories')->group(function () {
     Route::delete('/delete/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
 
 });
+
+
+
+////////////////////Articles///////////////////
+Route::prefix('articles')->group(function () {
+    Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
+    Route::get('/show/{category}', [ArticleController::class, 'show'])->name('articles.show');
+    Route::post('/store', [ArticleController::class, 'store'])->name('articles.store');
+    Route::put('/update/{category}', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/delete/{category}', [ArticleController::class, 'destroy'])->name('articles.destroy');
+
+});
+
+
 
 /////////////////////////Files///////////////////////////
 Route::prefix('files')->group(function () {
