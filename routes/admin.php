@@ -34,11 +34,10 @@ Route::prefix('categories')->group(function () {
 ////////////////////Articles///////////////////
 Route::prefix('articles')->group(function () {
     Route::get('/', [ArticleController::class, 'index'])->name('articles.index');
-    Route::get('/show/{category}', [ArticleController::class, 'show'])->name('articles.show');
+    Route::get('/show/{article}', [ArticleController::class, 'show'])->name('articles.show');
     Route::post('/store', [ArticleController::class, 'store'])->name('articles.store');
-    Route::put('/update/{category}', [ArticleController::class, 'update'])->name('articles.update');
-    Route::delete('/delete/{category}', [ArticleController::class, 'destroy'])->name('articles.destroy');
-
+    Route::put('/update/{article}', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/delete/{article}', [ArticleController::class, 'destroy'])->name('articles.destroy');
 });
 
 
